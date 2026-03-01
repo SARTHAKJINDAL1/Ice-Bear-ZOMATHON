@@ -1,0 +1,63 @@
+Use this exact structure:
+
+ FINAL PRODUCTION ARCHITECTURE 
+User Adds Item to Cart
+            ↓
+CSAO API Gateway
+            ↓
+Cart Context Service
+    - Cart State
+    - User Features
+    - Session Context
+            ↓
+Candidate Generation Layer
+    - Co-occurrence Matrix
+    - ANN Search
+    - LLM Semantic Embeddings (Offline)
+            ↓
+Feature Store (Online)
+    - User features
+    - Restaurant features
+    - Context features
+            ↓
+LightGBM Ranking Model
+            ↓
+Diversity Re-Ranking (MMR)
+            ↓
+SHOW LLM PROPERLY
+
+Do NOT show LLM inside real-time inference.
+
+Instead show:
+
+Offline Training Layer
+      ↓
+LLM Item Embedding Generator
+      ↓
+Embedding Store
+      ↓
+Used by Candidate Generator
+
+This proves:
+
+You understand latency constraints
+
+LLM won’t break 200ms SLA
+
+You use AI intelligently
+
+Judges love this.
+
+
+
+Below diagram add a small box:
+
+Component	Latency
+Candidate retrieval	40ms
+Feature enrichment	100ms
+Ranking	60ms
+Re-ranking	20ms
+Total	~220ms
+
+This addresses:
+System Design & Production Readiness.

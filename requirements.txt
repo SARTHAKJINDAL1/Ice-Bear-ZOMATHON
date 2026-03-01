@@ -1,0 +1,5 @@
+ REQUIREMENT FILE
+pandas
+numpy
+lightgbm
+scikit-learn

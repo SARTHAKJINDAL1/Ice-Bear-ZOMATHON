@@ -1,0 +1,6 @@
+user_id,city,avg_order_value,total_orders
+1021,Delhi=0,345.67,45
+2053,Mumbai=1,280.12,78
+3045,Bangalore=2,260.45,32
+4567,Delhi=3,390.23,105
+5078,Mumbai=4,310.56,65
